@@ -15,9 +15,9 @@ public class InitPlacedFeature {
 
     public static final RegistryObject<PlacedFeature> EXAMPLE_OVERWORLD_ORE = PLACED_FEATURES.register("sapphire_overworld_ore",
             () -> new PlacedFeature(InitConfiguredFeature.SAPPHIRE_OVERWORLD_ORE.getHolder().get(),
-                    commonOrePlacement(6, HeightRangePlacement.triangle(
+                    commonOrePlacement(5, HeightRangePlacement.triangle(
                             VerticalAnchor.bottom(),                // Bottom anchor -> bottom of the world
-                            VerticalAnchor.absolute(60)    // Upper anchor -> y=60
+                            VerticalAnchor.absolute(40)    // Upper anchor -> y=40
                     ))));
 
     private static List<PlacementModifier> orePlacement(PlacementModifier count, PlacementModifier height) {

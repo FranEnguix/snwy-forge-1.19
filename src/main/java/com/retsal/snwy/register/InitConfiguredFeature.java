@@ -24,7 +24,7 @@ public class InitConfiguredFeature {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SAPPHIRE_OVERWORLD_ORE = CONFIGURED_FEATURE.register(
             "sapphire_overworld_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(SAPPHIRE_OVERWORLD_REPLACEMENT.get(), 8))); // p161014 = vein size
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(SAPPHIRE_OVERWORLD_REPLACEMENT.get(), 6))); // p161014 = vein size
 
 
 }

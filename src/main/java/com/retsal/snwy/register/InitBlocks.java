@@ -1,6 +1,9 @@
 package com.retsal.snwy.register;
 
 import com.retsal.snwy.SnwyMod;
+import com.retsal.snwy.common.CreativeModeTabSnwy;
+import com.retsal.snwy.common.block.ShopBlock;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -14,5 +17,9 @@ public class InitBlocks {
 
     public static final RegistryObject<Block> SAPPHIRE_ORE = BLOCKS.register("sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.AMETHYST))
+    );
+
+    public static final RegistryObject<Block> SHOP = BLOCKS.register("shop",
+            () -> new ShopBlock(BlockBehaviour.Properties.of(Material.DIRT).dynamicShape().noOcclusion())
     );
 }
