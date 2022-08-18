@@ -14,10 +14,17 @@ public class InitBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, SnwyMod.MODID);
 
     public static final RegistryObject<Block> SAPPHIRE_ORE = BLOCKS.register("sapphire_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.AMETHYST))
+            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT)
+                    .strength(2.5f)
+                    .requiresCorrectToolForDrops()
+            )
     );
 
     public static final RegistryObject<Block> SHOP = BLOCKS.register("shop",
-            () -> new ShopBlock(BlockBehaviour.Properties.of(Material.STONE).dynamicShape().noOcclusion())
+            () -> new ShopBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .dynamicShape()
+                    .noOcclusion()
+                    .strength(10f, 30f)
+            )
     );
 }
