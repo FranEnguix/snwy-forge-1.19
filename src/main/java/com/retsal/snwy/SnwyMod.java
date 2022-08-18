@@ -3,9 +3,7 @@ package com.retsal.snwy;
 import com.mojang.logging.LogUtils;
 import com.retsal.snwy.client.event.ClientEventHandler;
 import com.retsal.snwy.common.event.EventHandler;
-import com.retsal.snwy.register.InitBlocks;
-import com.retsal.snwy.register.InitItems;
-import com.retsal.snwy.register.InitSounds;
+import com.retsal.snwy.register.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,9 +22,11 @@ public class SnwyMod
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus(),
                 forgeBus = MinecraftForge.EVENT_BUS;
 
-        InitItems.ITEMS.register(modBus);
         InitBlocks.BLOCKS.register(modBus);
+        InitItems.ITEMS.register(modBus);
         InitSounds.SOUNDS.register(modBus);
+        InitConfiguredFeature.CONFIGURED_FEATURE.register(modBus);
+        InitPlacedFeature.PLACED_FEATURES.register(modBus);
 
         MinecraftForge.EVENT_BUS.register(new EventHandler());
         if (FMLEnvironment.dist == Dist.CLIENT) {

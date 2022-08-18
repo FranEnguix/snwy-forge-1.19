@@ -3,6 +3,7 @@ package com.retsal.snwy.register;
 import com.retsal.snwy.SnwyMod;
 import com.retsal.snwy.common.CreativeModeTabSnwy;
 import com.retsal.snwy.common.IntegrationFood;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,6 +23,12 @@ public class InitItems {
     public static final RegistryObject<Item> COPPER_COIN = ITEMS.register("copper_coin", () -> new Item(
             new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)
     ));
+
+
+    /// ORES
+
+    public static final RegistryObject<BlockItem> SAPPHIRE_ORE = ITEMS.register("sapphire_ore",
+            () -> new BlockItem(InitBlocks.SAPPHIRE_ORE.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
 
     /// FOOD
