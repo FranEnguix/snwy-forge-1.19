@@ -1,3 +1,4 @@
+@echo off
 del C:\Users\Retsal\Documents\Java\SNWY\build\libs\snwy*
 del "C:\Users\Retsal\Documents\Minecraft Forge\Server 1.19\mods\snwy*"
 del C:\Users\Retsal\curseforge\minecraft\Instances\CrearForgeMod\mods\snwy*
