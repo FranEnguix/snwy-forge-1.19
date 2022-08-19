@@ -24,6 +24,10 @@ public class InitItems {
             new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)
     ));
 
+    public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire", () -> new Item(
+            new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)
+    ));
+
 
     /// BLOCKS
 

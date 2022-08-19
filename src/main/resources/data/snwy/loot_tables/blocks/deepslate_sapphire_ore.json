@@ -10,7 +10,7 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "snwy:fresisuis_blueberry",
+              "name": "snwy:sapphire",
               "conditions": [
                 {
                   "condition": "minecraft:match_tool",
@@ -29,7 +29,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "snwy:fresisuis_blueberry",
+              "name": "snwy:sapphire",
               "functions": [
                 {
                   "function": "minecraft:explosion_decay"
