@@ -20,6 +20,13 @@ public class InitBlocks {
             )
     );
 
+    public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE = BLOCKS.register("deepslate_sapphire_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT)
+                    .strength(2.5f)
+                    .requiresCorrectToolForDrops()
+            )
+    );
+
     public static final RegistryObject<Block> SHOP = BLOCKS.register("shop",
             () -> new ShopBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .dynamicShape()

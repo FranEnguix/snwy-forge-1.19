@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "snwy:sapphire_ore"
+    "snwy:sapphire_ore",
+    "snwy:deepslate_sapphire_ore"
   ]
 }

@@ -19,7 +19,8 @@ public class InitConfiguredFeature {
 
     private static final Supplier<List<OreConfiguration.TargetBlockState>> SAPPHIRE_OVERWORLD_REPLACEMENT =
             Suppliers.memoize(() -> List.of(
-                    OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, InitBlocks.SAPPHIRE_ORE.get().defaultBlockState())
+                    OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, InitBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
+                    OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, InitBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState())
             ));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SAPPHIRE_OVERWORLD_ORE = CONFIGURED_FEATURE.register(
