@@ -43,6 +43,15 @@ public class InitItems {
     public static final RegistryObject<Item> SHOP_RED = ITEMS.register("shop_red",
             () -> new BlockItem(InitBlocks.SHOP_RED.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
+    public static final RegistryObject<Item> ALTAR_STATUE_DIG_SPEED = ITEMS.register("altar_statue_dig_speed",
+            () -> new BlockItem(InitBlocks.ALTAR_STATUE_DIG_SPEED.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+    public static final RegistryObject<Item> ALTAR_STATUE_MOVEMENT_SPEED = ITEMS.register("altar_statue_movement_speed",
+            () -> new BlockItem(InitBlocks.ALTAR_STATUE_MOVEMENT_SPEED.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+    public static final RegistryObject<Item> ALTAR_STATUE_REGENERATION = ITEMS.register("altar_statue_regeneration",
+            () -> new BlockItem(InitBlocks.ALTAR_STATUE_REGENERATION.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
 
     /// FOOD
 

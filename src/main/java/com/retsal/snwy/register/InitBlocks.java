@@ -1,6 +1,9 @@
 package com.retsal.snwy.register;
 
 import com.retsal.snwy.SnwyMod;
+import com.retsal.snwy.common.block.AltarStatueDigSpeed;
+import com.retsal.snwy.common.block.AltarStatueMovementSpeed;
+import com.retsal.snwy.common.block.AltarStatueRegeneration;
 import com.retsal.snwy.common.block.ShopBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -31,7 +34,7 @@ public class InitBlocks {
             () -> new ShopBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .dynamicShape()
                     .noOcclusion()
-                    .strength(10f, 30f)
+                    .strength(-1f, 30f)
             )
     );
 
@@ -39,7 +42,31 @@ public class InitBlocks {
             () -> new ShopBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .dynamicShape()
                     .noOcclusion()
-                    .strength(10f, 30f)
+                    .strength(-1f, 30f)
+            )
+    );
+
+    public static final RegistryObject<Block> ALTAR_STATUE_DIG_SPEED = BLOCKS.register("altar_statue_dig_speed",
+            () -> new AltarStatueDigSpeed(BlockBehaviour.Properties.of(Material.STONE)
+                    .dynamicShape()
+                    .noOcclusion()
+                    .strength(-1f, 30f)
+            )
+    );
+
+    public static final RegistryObject<Block> ALTAR_STATUE_MOVEMENT_SPEED = BLOCKS.register("altar_statue_movement_speed",
+            () -> new AltarStatueMovementSpeed(BlockBehaviour.Properties.of(Material.STONE)
+                    .dynamicShape()
+                    .noOcclusion()
+                    .strength(-1f, 30f)
+            )
+    );
+
+    public static final RegistryObject<Block> ALTAR_STATUE_REGENERATION = BLOCKS.register("altar_statue_regeneration",
+            () -> new AltarStatueRegeneration(BlockBehaviour.Properties.of(Material.STONE)
+                    .dynamicShape()
+                    .noOcclusion()
+                    .strength(-1f, 30f)
             )
     );
 }

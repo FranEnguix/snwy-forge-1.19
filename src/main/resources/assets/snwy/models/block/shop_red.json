@@ -2,7 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [48, 48],
 	"textures": {
-		"0": "snwy:block/shop_red"
+		"0": "snwy:block/shop_red",
+		"particle": "minecraft:block/stone"
 	},
 	"elements": [
 		{
