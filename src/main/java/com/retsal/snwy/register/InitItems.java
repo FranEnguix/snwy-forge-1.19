@@ -51,5 +51,21 @@ public class InitItems {
             new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB).food(IntegrationFood.FRESISUIS_BLUEBERRY)
     ));
 
+    public static final RegistryObject<Item> FRESISUIS_LEMON = ITEMS.register("fresisuis_lemon", () -> new Item(
+            new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB).food(IntegrationFood.FRESISUIS_LEMON)
+    ));
+
+    public static final RegistryObject<Item> FRESISUIS_LIME = ITEMS.register("fresisuis_lime", () -> new Item(
+            new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB).food(IntegrationFood.FRESISUIS_LIME)
+    ));
+
+    public static final RegistryObject<Item> FRESISUIS_ORANGE = ITEMS.register("fresisuis_orange", () -> new Item(
+            new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB).food(IntegrationFood.FRESISUIS_ORANGE)
+    ));
+
+    public static final RegistryObject<Item> FRESISUIS_STRAWBERRY = ITEMS.register("fresisuis_strawberry", () -> new Item(
+            new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB).food(IntegrationFood.FRESISUIS_STRAWBERRY)
+    ));
+
 
 }
