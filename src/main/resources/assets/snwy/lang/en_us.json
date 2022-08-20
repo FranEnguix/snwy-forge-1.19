@@ -9,8 +9,10 @@
   "item.snwy.fresisuis_orange": "Orange Fresisuis",
   "item.snwy.fresisuis_strawberry": "Strawberry Fresisuis",
   "item.snwy.sapphire": "Sapphire",
-  "item.snwy.shop": "Shop",
-  "block.snwy.shop": "Shop",
+  "item.snwy.shop_blue": "Blue Shop",
+  "item.snwy.shop_red": "Red Shop",
+  "block.snwy.shop_blue": "Blue Shop",
+  "block.snwy.shop_red": "Red Shop",
   "block.snwy.sapphire_ore": "Sapphire Ore",
   "block.snwy.deepslate_sapphire_ore": "Deepslate Sapphire Ore"
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "snwy:block/shop_red",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "snwy:block/shop_red"
+    },
+    "facing=south": {
+      "model": "snwy:block/shop_red",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "snwy:block/shop_red",
+      "y": 270
+    }
+  }
+}

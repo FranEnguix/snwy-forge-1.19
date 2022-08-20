@@ -37,8 +37,11 @@ public class InitItems {
     public static final RegistryObject<BlockItem> DEEPSLATE_SAPPHIRE_ORE = ITEMS.register("deepslate_sapphire_ore",
             () -> new BlockItem(InitBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
-    public static final RegistryObject<Item> SHOP = ITEMS.register("shop",
-            () -> new BlockItem(InitBlocks.SHOP.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+    public static final RegistryObject<Item> SHOP_BLUE = ITEMS.register("shop_blue",
+            () -> new BlockItem(InitBlocks.SHOP_BLUE.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+    public static final RegistryObject<Item> SHOP_RED = ITEMS.register("shop_red",
+            () -> new BlockItem(InitBlocks.SHOP_RED.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
 
     /// FOOD

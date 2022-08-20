@@ -27,7 +27,15 @@ public class InitBlocks {
             )
     );
 
-    public static final RegistryObject<Block> SHOP = BLOCKS.register("shop",
+    public static final RegistryObject<Block> SHOP_BLUE = BLOCKS.register("shop_blue",
+            () -> new ShopBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .dynamicShape()
+                    .noOcclusion()
+                    .strength(10f, 30f)
+            )
+    );
+
+    public static final RegistryObject<Block> SHOP_RED = BLOCKS.register("shop_red",
             () -> new ShopBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .dynamicShape()
                     .noOcclusion()
