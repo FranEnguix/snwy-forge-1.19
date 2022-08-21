@@ -32,8 +32,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class ShopBlock extends Block {
     /// Usage:
-    ///  Place a sign in a block of your choice below (maximum set to 30 blocks below) the Shop block.
-    ///  The first line must contain: <price> <g|c> <quantity> where g = gold coin and c = copper coin
+    ///  Place a sign in a block of your choice below (maximum set to 50 blocks below) the Shop block.
+    ///  The first line must contain: <price> <g|c> <quantity> where g = gold coin, c = copper coin, t = token
     ///  The second, third and fourth lines are used to set the purchasable item id string.
     ///  Example:
     ///   1 g 5
@@ -76,7 +76,7 @@ public class ShopBlock extends Block {
     public InteractionResult use(BlockState blockState, Level world, BlockPos blockPos, Player player,
                                  InteractionHand interactionHand, BlockHitResult blockHitResult) {
         if (!world.isClientSide()) {
-            final int MAX_SEARCH_DISTANCE = 30;
+            final int MAX_SEARCH_DISTANCE = 50;
             SignBlockEntity signBlockEntity = findSignBlockEntity(blockPos, world, MAX_SEARCH_DISTANCE);
             if (signBlockEntity != null) {
                 if (buyItem(player, signBlockEntity))
@@ -113,15 +113,19 @@ public class ShopBlock extends Block {
     }
 
     private CoinType getCoinType(SignBlockEntity sign) {
-        // Example: 1 g 32          => g = gold coin; c = copper coin
+        // Example: 1 g 32          => g = gold coin; c = copper coin; t = token
         //          minecraft:boat
         String rawText = getSignText(sign)[0];
         String[] spaceSeparatedText = rawText.split("\\s+");
         String coinLetter = spaceSeparatedText[1];
         if (coinLetter.equalsIgnoreCase("g"))
             return CoinType.GOLD;
-        else
+        else if (coinLetter.equalsIgnoreCase("c"))
             return CoinType.COPPER;
+        else if (coinLetter.equalsIgnoreCase("t"))
+            return CoinType.TOKEN;
+        else
+            return CoinType.NONE;
     }
 
     private int getQuantity(SignBlockEntity sign) {
@@ -150,8 +154,12 @@ public class ShopBlock extends Block {
     private ItemStack getCoin(CoinType coinType) {
         if (coinType == CoinType.GOLD)
             return InitItems.GOLD_COIN.get().getDefaultInstance();
-        else
+        else if (coinType == CoinType.COPPER)
             return InitItems.COPPER_COIN.get().getDefaultInstance();
+        else if (coinType == CoinType.TOKEN)
+            return InitItems.TOKEN.get().getDefaultInstance();
+        else
+            return null;
     }
 
     private void doPayment(Inventory inv, ItemStack coins) {
