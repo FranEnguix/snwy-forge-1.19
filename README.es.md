@@ -70,6 +70,8 @@ Los minerales se encuentran entre las rocas a distintas profundidades y son usad
 ### Zafiro
 El zafiro es un mineral codiciado. Es ampliamente utilizado para la creación de objetos valiosos, como las **monedas**.
 
+![zafiro](pictures/sapphire.png)
+
 Características:
 * Color: Azul oscuro.
 * Formación entre rocas de pizarra: Sí.
@@ -121,7 +123,7 @@ No pude terminar mi investigación, porque no he sido capaz de volverla a encont
 
 ## Miscelánea
 
-El camino está iniciado, pero no se acaba aquí. Esta es una lista, en constante evolución, con algunas de las cosas que vendrán en un futuro:
+El camino está iniciado, pero no se acaba aquí. Esta es una lista, en constante evolución, con algunos elementos que vendrán en un futuro:
 
 - [ ] Nuevas armaduras con efecto activo y de set (si tienes equipadas varias piezas del mismo conjunto obtienes efectos adicionales).
 - [ ] Bloques especiales que se camuflan entre los normales, pero que permiten ser atravesados sin resistencia.
