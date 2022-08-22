@@ -48,14 +48,17 @@ Las monedas son utilizadas para comprar objetos en las tiendas o para ser interc
 Existen dos tipos de monedas:
 
 **SNWY Gold Coin**. Moneda de alto valor. Se consigue realizando la receta:
+
 ![gold coin crafting](pictures/craft_gold_coin.png)
 
 **SNWY Copper Coin**. Moneda de bajo valor. Se consigue realizando la receta:
+
 ![copper coin crafting](pictures/craft_copper_coin.png)
 
 ### Token
 
 Existe un tipo de ficha, llamado **Casino Token**. Esta ficha se consigue intercambiando monedas en la recepción del **Casino SNWY 3**, y permite jugar a juegos como *la ruleta* o el *blackjack*.
+
 ![Casino](pictures/casino.png)
 
 ---
