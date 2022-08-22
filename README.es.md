@@ -117,7 +117,7 @@ Los altares son pequeños monumentos de culto que puedes encontrar en el mundo. 
 
 ![altares](pictures/altars.png)
 
-No pude terminar mi investigación, porque no he sido capaz de volverla a encontrar. Aunque de todas maneras, descubrí un hecho fascinante. Si coges una moneda de oro y la depositas en la pequeña caja marrón que se encuentra a sus pies, sentirás una energía recorriendo tu cuerpo. En mi caso noté como el peso de la vejez había disminuido y pude correr incluso más rápido que cuando era joven. El efecto, si bien resultó duradero, también fue perecedero y eventualmente terminó. ¿Me pregunto dónde se encontrará aquel pequeño altar?
+No pude terminar mi investigación, porque no he sido capaz de volverla a encontrar. Aunque de todas maneras, descubrí un hecho fascinante. Si coges una moneda de oro y la depositas en la pequeña caja marrón que se encuentra a sus pies, sentirás una energía recorriendo tu cuerpo. En mi caso noté como el peso de la vejez había disminuido y pude correr incluso más rápido que cuando era joven. El efecto, si bien resultó duradero, también fue perecedero y eventualmente terminó. Me pregunto ¿dónde se encontrará aquel pequeño altar?
 
 ---
 
