@@ -18,7 +18,7 @@ public class IntegrationFood {
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 15*20, 2), 0.15f)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 40*20, 1), 1f)
             .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 120*20, 2), 1f)
-            .effect(() -> new MobEffectInstance(MobEffects.POISON, 10*20, 2), 0.15f)
+            .effect(() -> new MobEffectInstance(MobEffects.POISON, 10*20, 1), 0.15f)
             .nutrition(4)
             .alwaysEat()
             .fast()
