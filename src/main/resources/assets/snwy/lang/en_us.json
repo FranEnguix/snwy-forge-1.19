@@ -3,6 +3,10 @@
   "item.snwy.gold_coin": "SNWY Gold Coin",
   "item.snwy.copper_coin": "SNWY Copper Coin",
   "item.snwy.token": "Casino Token",
+  "item.snwy.hermes_helmet": "Hermes Helmet",
+  "item.snwy.hermes_chestplate": "Hermes Chestplate",
+  "item.snwy.hermes_leggings": "Hermes Leggings",
+  "item.snwy.hermes_boots": "Hermes Boots",
   "item.snwy.glowing_suppository": "Glowing Suppository",
   "item.snwy.fresisuis_blueberry": "Blueberry Fresisuis",
   "item.snwy.fresisuis_lemon": "Lemon Fresisuis",
@@ -15,6 +19,7 @@
   "block.snwy.shop_blue": "Blue Shop",
   "block.snwy.shop_red": "Red Shop",
   "block.snwy.sapphire_ore": "Sapphire Ore",
+  "block.snwy.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
   "block.snwy.altar_statue_dig_speed": "Dig Speed Altar Statue",
   "block.snwy.altar_statue_movement_speed": "Movement Speed Altar Statue",
   "block.snwy.altar_statue_regeneration": "Regeneration Altar Statue"

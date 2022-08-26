@@ -3,8 +3,6 @@ SNWY mod para Minecraft 1.19 con Forge.
 
 # Guía orientada al servidor de SNWY 3
 
-![poblado](pictures/snwy_town.png)
-
 El mod ha sido específicamente creado para mejorar el servidor de SNWY 3, con el objetivo de cumplir las necesidades de sus usuarios. Este mod añade:
 
 * Tiendas que venden objetos únicos.
@@ -21,6 +19,8 @@ El mod ha sido específicamente creado para mejorar el servidor de SNWY 3, con e
 * Altares de dioses con efectos especiales.
 
 * Miscelánea.
+
+![poblado](pictures/snwy_town.png)
 
 ---
 

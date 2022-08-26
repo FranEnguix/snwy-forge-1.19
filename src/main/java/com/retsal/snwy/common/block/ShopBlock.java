@@ -4,6 +4,7 @@ import com.retsal.snwy.register.InitItems;
 import com.retsal.snwy.utility.CoinType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -163,8 +164,13 @@ public class ShopBlock extends Block {
     }
 
     private void doPayment(Inventory inv, ItemStack coins) {
-        int quantity = coins.getCount();
-        inv.removeItem(inv.findSlotMatchingItem(coins), quantity);
+        int price = coins.getCount();
+        int sustractedQuantity = 0;
+        while (sustractedQuantity < price) {
+            int toSustract = price - sustractedQuantity;
+            int moneySlot = inv.findSlotMatchingItem(coins);
+            sustractedQuantity += inv.removeItem(moneySlot, Math.min(toSustract, 64)).getCount();
+        }
     }
 
     private boolean buyItem(Player player, SignBlockEntity sign) {

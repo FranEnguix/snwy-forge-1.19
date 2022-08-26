@@ -3,6 +3,10 @@ package com.retsal.snwy.register;
 import com.retsal.snwy.SnwyMod;
 import com.retsal.snwy.common.CreativeModeTabSnwy;
 import com.retsal.snwy.common.IntegrationFood;
+import com.retsal.snwy.common.armor.HermesArmorItem;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -83,5 +87,19 @@ public class InitItems {
             new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB).food(IntegrationFood.FRESISUIS_STRAWBERRY)
     ));
 
+
+    /// ARMOR
+
+    public static final RegistryObject<ArmorItem> HERMES_HELMET = ITEMS.register("hermes_helmet",
+            () -> new HermesArmorItem(ArmorTiers.HERMES, EquipmentSlot.HEAD, new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+    public static final RegistryObject<ArmorItem> HERMES_CHESTPLATE = ITEMS.register("hermes_chestplate",
+            () -> new HermesArmorItem(ArmorTiers.HERMES, EquipmentSlot.CHEST, new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+    public static final RegistryObject<ArmorItem> HERMES_LEGGINGS = ITEMS.register("hermes_leggings",
+            () -> new HermesArmorItem(ArmorTiers.HERMES, EquipmentSlot.LEGS, new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+    public static final RegistryObject<ArmorItem> HERMES_BOOTS = ITEMS.register("hermes_boots",
+            () -> new HermesArmorItem(ArmorTiers.HERMES, EquipmentSlot.FEET, new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
 }

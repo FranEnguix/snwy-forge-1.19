@@ -13,7 +13,7 @@ public class InitPlacedFeature {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, SnwyMod.MODID);
 
-    public static final RegistryObject<PlacedFeature> EXAMPLE_OVERWORLD_ORE = PLACED_FEATURES.register("sapphire_overworld_ore",
+    public static final RegistryObject<PlacedFeature> SAPPHIRE_OVERWORLD_ORE = PLACED_FEATURES.register("sapphire_overworld_ore",
             () -> new PlacedFeature(InitConfiguredFeature.SAPPHIRE_OVERWORLD_ORE.getHolder().get(),
                     commonOrePlacement(5, HeightRangePlacement.triangle(
                             VerticalAnchor.bottom(),                // Bottom anchor -> bottom of the world
