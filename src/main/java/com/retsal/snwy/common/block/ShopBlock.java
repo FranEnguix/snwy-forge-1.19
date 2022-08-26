@@ -4,7 +4,6 @@ import com.retsal.snwy.register.InitItems;
 import com.retsal.snwy.utility.CoinType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -31,6 +30,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+
 public class ShopBlock extends Block {
     /// Usage:
     ///  Place a sign in a block of your choice below (maximum set to 50 blocks below) the Shop block.
@@ -44,6 +45,7 @@ public class ShopBlock extends Block {
 
     private static final VoxelShape SHAPE = makeShape();
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    final int MAX_SEARCH_DISTANCE = 50;
 
     public ShopBlock(Properties properties) {
         super(properties);
@@ -77,10 +79,9 @@ public class ShopBlock extends Block {
     public InteractionResult use(BlockState blockState, Level world, BlockPos blockPos, Player player,
                                  InteractionHand interactionHand, BlockHitResult blockHitResult) {
         if (!world.isClientSide()) {
-            final int MAX_SEARCH_DISTANCE = 50;
             SignBlockEntity signBlockEntity = findSignBlockEntity(blockPos, world, MAX_SEARCH_DISTANCE);
             if (signBlockEntity != null) {
-                if (buyItem(player, signBlockEntity))
+                if (buyItems(player, signBlockEntity, world))
                     world.playSound(null,
                             player.position().x, player.position().y, player.position().z,
                             SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.AMBIENT, 1, 1f
@@ -104,6 +105,12 @@ public class ShopBlock extends Block {
         return null;
     }
 
+    private boolean isContinued(SignBlockEntity sign) {
+        String rawText = getSignText(sign)[0];
+        String[] spaceSeparatedText = rawText.split("\\s+");
+        return spaceSeparatedText.length > 0 &&
+                spaceSeparatedText[spaceSeparatedText.length - 1].equalsIgnoreCase("c"); // c = continue
+    }
 
     private int getPrice(SignBlockEntity sign) {
         // Example: 1 g 32          => g = gold coin; c = copper coin
@@ -152,7 +159,7 @@ public class ShopBlock extends Block {
         return text;
     }
 
-    private ItemStack getCoin(CoinType coinType) {
+    private ItemStack getCoinType(CoinType coinType) {
         if (coinType == CoinType.GOLD)
             return InitItems.GOLD_COIN.get().getDefaultInstance();
         else if (coinType == CoinType.COPPER)
@@ -173,21 +180,82 @@ public class ShopBlock extends Block {
         }
     }
 
-    private boolean buyItem(Player player, SignBlockEntity sign) {
+    private boolean buyItems(Player player, SignBlockEntity starterSign, Level world) {
+        boolean continueSearching = false;
         Inventory inv = player.getInventory();
-        int price = getPrice(sign);
+        SignBlockEntity sign = starterSign;
+        ArrayList<ItemStack> items = new ArrayList<ItemStack>();
+        ArrayList<ItemStack> coins = new ArrayList<ItemStack>();
+        do {
+            if (sign == null)
+                return false;
+            mountObjects(coins, getCoin(sign));
+            mountObjects(items, getPurchaseItem(sign));
+            continueSearching = isContinued(sign);
+            if (continueSearching)
+                sign = findSignBlockEntity(sign.getBlockPos(), world, MAX_SEARCH_DISTANCE);
+        } while (continueSearching);
+
+        boolean hasMoney = playerHasMoney(inv, coins);
+        if (hasMoney) {
+            doPayments(inv, coins);
+            for (ItemStack item : items)
+                inv.placeItemBackInInventory(item);
+        }
+        return hasMoney;
+    }
+
+    private void doPayments(Inventory inv, ArrayList<ItemStack> coins) {
+        for (ItemStack coin : coins)
+            doPayment(inv, coin);
+    }
+
+    private boolean playerHasMoney(Inventory inv, ArrayList<ItemStack> coins) {
+        boolean hasMoney = true;
+        for (ItemStack coin : coins)
+            hasMoney &= inv.countItem(coin.getItem()) >= coin.getCount();
+        return hasMoney;
+    }
+
+    private ItemStack getPurchaseItem(SignBlockEntity sign) {
         int quantity = getQuantity(sign);
         ItemStack purchaseItem = getItem(sign);
-        ItemStack coin = getCoin(getCoinType(sign));
         purchaseItem.setCount(quantity);
-        coin.setCount(price);
-
-        int playerCoins = inv.countItem(coin.getItem());
-        if (!purchaseItem.isEmpty() && playerCoins >= price) {
-            doPayment(inv, coin);
-            inv.placeItemBackInInventory(purchaseItem);
-            return true;
-        }
-        return false;
+        return purchaseItem;
     }
+
+    private ItemStack getCoin(SignBlockEntity sign) {
+        int price = getPrice(sign);
+        ItemStack coin = getCoinType(getCoinType(sign));
+        coin.setCount(price);
+        return coin;
+    }
+
+    private void mountObjects(ArrayList<ItemStack> bag, ItemStack obj) {
+        if (bag.contains(obj)) {
+            ItemStack objInBag = bag.get(bag.indexOf(obj));
+            objInBag.setCount(objInBag.getCount() + obj.getCount());
+        } else
+            bag.add(obj);
+    }
+
+//    private boolean oldBuyItems(Player player, SignBlockEntity sign) {
+//        Inventory inv = player.getInventory();
+//        int price = getPrice(sign);
+//        int quantity = getQuantity(sign);
+//
+//        ItemStack coin = getCoinType(getCoinType(sign));
+//
+//        ItemStack purchaseItem = getItem(sign);
+//        purchaseItem.setCount(quantity);
+//        coin.setCount(price);
+//
+//        int playerCoins = inv.countItem(coin.getItem());
+//        if (!purchaseItem.isEmpty() && playerCoins >= price) {
+//            doPayment(inv, coin);
+//            inv.placeItemBackInInventory(purchaseItem);
+//            return true;
+//        }
+//        return false;
+//    }
 }

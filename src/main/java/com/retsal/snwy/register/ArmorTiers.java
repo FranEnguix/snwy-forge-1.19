@@ -14,7 +14,7 @@ public class ArmorTiers {
             SoundEvents.BAT_TAKEOFF,
             0f,
             0f,
-            () -> Ingredient.EMPTY
+            () -> Ingredient.EMPTY // Repair material
     );
 
 }
