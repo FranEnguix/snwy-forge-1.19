@@ -98,9 +98,9 @@ Son comprados en la tienda de dulces del pueblo y existen en una variedad de sab
 
 * **Blueberry Fresisuis**: Fresisuis de arándanos que mejora la capacidad de mantener la respiración debajo del agua durante dos minutos. El subidón de azúcar aumenta la velocidad durante cuarenta segundos, pero tiene un 15% de probabilidad de causar envenenamiento y náuseas.
 
-* **Lemon Fresisuis**: Fresisuis de arándanos que mejora la capacidad de mantener la respiración debajo del agua durante dos minutos. El subidón de azúcar aumenta la velocidad durante cuarenta segundos, pero tiene un 15% de probabilidad de causar envenenamiento y náuseas.
+* **Lemon Fresisuis**: Fresisuis de limón con ginseng coreano, que revitaliza al usuario permitiendo picar más rápido durante dos minutos.  El subidón de azúcar aumenta la velocidad durante cuarenta segundos, pero tiene un 15% de probabilidad de causar envenenamiento y náuseas.Fresisuis de arándanos que mejora la capacidad de mantener la respiración debajo del agua durante dos minutos. El subidón de azúcar aumenta la velocidad durante cuarenta segundos, pero tiene un 15% de probabilidad de causar envenenamiento y náuseas.
 
-* **Lime Fresisuis**: Fresisuis de limón con ginseng coreano, que revitaliza al usuario permitiendo picar más rápido durante dos minutos.  El subidón de azúcar aumenta la velocidad durante cuarenta segundos, pero tiene un 15% de probabilidad de causar envenenamiento y náuseas.
+* **Lime Fresisuis**: Fresisuis de lima refrescante, que da al usuario dos minutos de buena suerte. El subidón de azúcar aumenta la velocidad durante cuarenta segundos, pero tiene un 15% de probabilidad de causar envenenamiento y náuseas.
 
 * **Orange Fresisuis**: Fresisuis de naranja. La vitamina C de este batido ayuda a estar sano, ahuyentando al escorbuto y cicatrizando las heridas durante diez segundos. El subidón de azúcar aumenta la velocidad durante cuarenta segundos, pero tiene un 15% de probabilidad de causar envenenamiento y náuseas.
 
@@ -123,9 +123,24 @@ No pude terminar mi investigación, porque no he sido capaz de volverla a encont
 
 ---
 
+## Armaduras de conjunto
+
+Las armaduras de conjunto dan diferentes bonificaciones adicionales a su portador en función de la cantidad de piezas del mismo conjunto que lleva equipadas.
+
+### Hermes
+Hermes es el dios olímpico mensajero, de las fronteras y los viajeros que las cruzan, del ingenio y del comercio en general, de la astucia, de los ladrones y los mentirosos, y el que guía las almas en el inframundo, el Hades.
+
+![hermes](pictures/hermes.png)
+Características:
+* **Tres piezas**: La armadura de Hermes permite a su portador **correr** más rápido y **saltar** más alto.
+* **Cuatro piezas y una pluma a cada mano**: El hambre nunca baja de cuatro muslos, por lo que siempre puedes correr.
+
+---
+
 ## Miscelánea
 
 El camino está iniciado, pero no se acaba aquí. Esta es una lista, en constante evolución, con algunos elementos que vendrán en un futuro:
 
-- [ ] Nuevas armaduras con efecto activo y de set (si tienes equipadas varias piezas del mismo conjunto obtienes efectos adicionales).
+- [x] Nuevas armaduras con efecto activo y de set (si tienes equipadas varias piezas del mismo conjunto obtienes efectos adicionales).
 - [ ] Bloques especiales que se camuflan entre los normales, pero que permiten ser atravesados sin resistencia.
+- [ ] Nuevas plantas con semillas para uso decorativo y recreativo.

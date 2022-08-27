@@ -4,6 +4,7 @@ import com.retsal.snwy.register.InitItems;
 import com.retsal.snwy.utility.CoinType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -189,6 +190,7 @@ public class ShopBlock extends Block {
         do {
             if (sign == null)
                 return false;
+            //player.sendSystemMessage(Component.literal(String.valueOf(cont)));
             mountObjects(coins, getCoin(sign));
             mountObjects(items, getPurchaseItem(sign));
             continueSearching = isContinued(sign);
@@ -232,10 +234,15 @@ public class ShopBlock extends Block {
     }
 
     private void mountObjects(ArrayList<ItemStack> bag, ItemStack obj) {
-        if (bag.contains(obj)) {
-            ItemStack objInBag = bag.get(bag.indexOf(obj));
-            objInBag.setCount(objInBag.getCount() + obj.getCount());
-        } else
+        boolean alreadyInBag = false;
+        for(int i = 0; i < bag.size() && !alreadyInBag; i++) {
+            ItemStack objInBag = bag.get(i);
+            if (objInBag.is(obj.getItem())) {
+                objInBag.setCount(objInBag.getCount() + obj.getCount());
+                alreadyInBag = true;
+            }
+        }
+        if (!alreadyInBag)
             bag.add(obj);
     }
 
