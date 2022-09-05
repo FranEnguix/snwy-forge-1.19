@@ -1,7 +1,6 @@
 package com.retsal.snwy.common.armor;
 
 import com.retsal.snwy.register.InitItems;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -23,8 +22,8 @@ public class HermesArmorItem extends ArmorItem {
         if (!level.isClientSide()) {
             int numSetPiecesEquipped = getNumberOfSetPiecesEquipped(player);
             if (numSetPiecesEquipped >= 3) {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3 * 20));
-                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 3 * 20));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3 * 20, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 3 * 20, 1));
                 if (numSetPiecesEquipped >= 4 && player.getFoodData().getFoodLevel() <= 7 && getNumberOfFeathersHold(player) == 2)
                     player.getFoodData().setFoodLevel(8);
             }

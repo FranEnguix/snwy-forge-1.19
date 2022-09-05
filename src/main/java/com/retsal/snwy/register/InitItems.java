@@ -4,6 +4,8 @@ import com.retsal.snwy.SnwyMod;
 import com.retsal.snwy.common.CreativeModeTabSnwy;
 import com.retsal.snwy.common.IntegrationFood;
 import com.retsal.snwy.common.armor.HermesArmorItem;
+import com.retsal.snwy.common.armor.WarlockArmorItem;
+import com.retsal.snwy.common.item.InfernalRodItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterials;
@@ -45,19 +47,19 @@ public class InitItems {
     public static final RegistryObject<BlockItem> DEEPSLATE_SAPPHIRE_ORE = ITEMS.register("deepslate_sapphire_ore",
             () -> new BlockItem(InitBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
-    public static final RegistryObject<Item> SHOP_BLUE = ITEMS.register("shop_blue",
+    public static final RegistryObject<BlockItem> SHOP_BLUE = ITEMS.register("shop_blue",
             () -> new BlockItem(InitBlocks.SHOP_BLUE.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
-    public static final RegistryObject<Item> SHOP_RED = ITEMS.register("shop_red",
+    public static final RegistryObject<BlockItem> SHOP_RED = ITEMS.register("shop_red",
             () -> new BlockItem(InitBlocks.SHOP_RED.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
-    public static final RegistryObject<Item> ALTAR_STATUE_DIG_SPEED = ITEMS.register("altar_statue_dig_speed",
+    public static final RegistryObject<BlockItem> ALTAR_STATUE_DIG_SPEED = ITEMS.register("altar_statue_dig_speed",
             () -> new BlockItem(InitBlocks.ALTAR_STATUE_DIG_SPEED.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
-    public static final RegistryObject<Item> ALTAR_STATUE_MOVEMENT_SPEED = ITEMS.register("altar_statue_movement_speed",
+    public static final RegistryObject<BlockItem> ALTAR_STATUE_MOVEMENT_SPEED = ITEMS.register("altar_statue_movement_speed",
             () -> new BlockItem(InitBlocks.ALTAR_STATUE_MOVEMENT_SPEED.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
-    public static final RegistryObject<Item> ALTAR_STATUE_REGENERATION = ITEMS.register("altar_statue_regeneration",
+    public static final RegistryObject<BlockItem> ALTAR_STATUE_REGENERATION = ITEMS.register("altar_statue_regeneration",
             () -> new BlockItem(InitBlocks.ALTAR_STATUE_REGENERATION.get(), new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
 
 
@@ -101,5 +103,30 @@ public class InitItems {
 
     public static final RegistryObject<ArmorItem> HERMES_BOOTS = ITEMS.register("hermes_boots",
             () -> new HermesArmorItem(ArmorTiers.HERMES, EquipmentSlot.FEET, new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+
+    public static final RegistryObject<ArmorItem> WARLOCK_HELMET = ITEMS.register("warlock_helmet",
+            () -> new WarlockArmorItem(ArmorTiers.WARLOCK, EquipmentSlot.HEAD, new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+    public static final RegistryObject<ArmorItem> WARLOCK_CHESTPLATE = ITEMS.register("warlock_chestplate",
+            () -> new WarlockArmorItem(ArmorTiers.WARLOCK, EquipmentSlot.CHEST, new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+    public static final RegistryObject<ArmorItem> WARLOCK_LEGGINGS = ITEMS.register("warlock_leggings",
+            () -> new WarlockArmorItem(ArmorTiers.WARLOCK, EquipmentSlot.LEGS, new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+    public static final RegistryObject<ArmorItem> WARLOCK_BOOTS = ITEMS.register("warlock_boots",
+            () -> new WarlockArmorItem(ArmorTiers.WARLOCK, EquipmentSlot.FEET, new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)));
+
+
+
+    /// WEAPONS
+
+    public static final RegistryObject<Item> INFERNAL_ROD = ITEMS.register("infernal_rod", () -> new InfernalRodItem(
+            new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB).stacksTo(1)
+    ));
+
+    public static final RegistryObject<Item> PELLET = ITEMS.register("kerosene_pellet", () -> new Item(
+            new Item.Properties().tab(CreativeModeTabSnwy.SNWY_TAB)
+    ));
 
 }
