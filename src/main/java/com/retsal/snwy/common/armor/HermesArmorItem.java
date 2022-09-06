@@ -24,8 +24,11 @@ public class HermesArmorItem extends ArmorItem {
             if (numSetPiecesEquipped >= 3) {
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3 * 20, 1));
                 player.addEffect(new MobEffectInstance(MobEffects.JUMP, 3 * 20, 1));
-                if (numSetPiecesEquipped >= 4 && player.getFoodData().getFoodLevel() <= 7 && getNumberOfFeathersHold(player) == 2)
-                    player.getFoodData().setFoodLevel(8);
+                if (numSetPiecesEquipped >= 4 && getNumberOfFeathersHold(player) == 2) {
+                    player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 3 * 20));
+                    if (player.getFoodData().getFoodLevel() <= 7)
+                        player.getFoodData().setFoodLevel(8);
+                }
             }
             if (player.getFoodData().getFoodLevel() == 8 && getNumberOfFeathersHold(player) == 1)
                 player.getFoodData().setFoodLevel(6);
