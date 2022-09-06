@@ -64,7 +64,6 @@ public class EventHandler {
 //        return x1*(1.0 - f) + x2*f;
 //    }
 
-//    @SubscribeEvent
 //    public void onAttack(AttackEntityEvent e) {
 //        if (!e.getEntity().level.isClientSide()) {
 //            Entity entity = e.getTarget();
@@ -74,7 +73,6 @@ public class EventHandler {
 //        }
 //    }
 
-//    @SubscribeEvent
 //    public void onServerChatEvent(ServerChatEvent e) {
 //        Component component = e.getComponent();
 //        String[] msg = component.getString().split(" ");
